@@ -3,18 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Selamat Ulang Tahun Nabilah!</title>
+  <title>Something special for bila!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <audio autoplay loop>
-  <source src="happy-birthday-nabilah.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-  <div class="container">
-    <h1>Selamat Ulang Tahun, Nabilah! 🎉</h1>
-    <p>Hari ini kamu genap 22 tahun! 🎂</p>
-    <p>Aku siapkan sesuatu yang spesial buat kamu di halaman ini 💌</p>
+  <!-- Halaman Pembuka -->
+  <div class="welcome-screen" id="welcome">
+    <h1>Hai Bila, ada yang spesial nih buat kamu!! 🥰</h1>
+    <p>Penasaran kann?</p>
+    <button onclick="startSurprise()">Apa tuchhh?</button>
   </div>
+
+  <!-- Musik -->
+  <audio id="musik" loop>
+    <source src="happy-birthday-nabilah.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Konten Utama -->
+  <div class="main-content" id="main" style="display: none;">
+    <div class="container">
+      <h1>Selamat Ulang Tahun, Nabilah! 🎉</h1>
+      <p>Hari ini kamu genap 22 tahun! 🎂</p>
+      <p>Aku siapkan sesuatu yang spesial buat kamu di halaman ini 💌</p>
+    </div>
+    <!-- Nanti kopi dan galeri masuk di sini -->
+  </div>
+
+  <script>
+    function startSurprise() {
+      document.getElementById("welcome").style.display = "none";
+      document.getElementById("main").style.display = "block";
+      document.getElementById("musik").play();
+    }
+  </script>
 </body>
+
 </html>
