@@ -5,12 +5,44 @@ body {
   background-color: #ffe6f0;
   color: #333;
   text-align: center;
-  padding: 0;
 }
 
-/* Tombol Umum */
+/* Layout Halaman */
+.welcome-screen,
+.greeting-screen,
+.coffee-screen {
+  min-height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+/* Halaman Welcome aktif di awal */
+.welcome-screen {
+  display: flex;
+  background-color: #ffcde0;
+}
+
+/* Container Tengah */
+.container {
+  max-width: 600px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul */
+h1 {
+  color: #e91e63;
+  margin-bottom: 20px;
+}
+
+/* Tombol */
 button {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 12px 24px;
   font-size: 16px;
   border: none;
@@ -18,114 +50,73 @@ button {
   color: white;
   border-radius: 30px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
 }
+
 button:hover {
   background-color: #d81b60;
+  transform: scale(1.05);
 }
 
-/* Halaman Pembuka */
-.welcome-screen {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffcde0;
-  padding: 40px;
+/* Tombol Kembali */
+.back-button {
+  margin-top: 20px;
+  background-color: #bbb;
+  color: #333;
 }
 
-.welcome-screen h1 {
-  font-size: 24px;
-  color: #d81b60;
-}
-.welcome-screen p {
-  font-size: 18px;
-  color: #444;
+.back-button:hover {
+  background-color: #999;
 }
 
-/* Halaman Ucapan */
-.greeting-screen {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff0f5;
-  padding: 40px;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-.container h1 {
-  color: #e91e63;
-}
-
-/* Halaman Kopi */
-.coffee-screen {
-  min-height: 100vh;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px 20px;
-}
+/* Gambar Kopi */
 .kopi-container {
-  width: 324px;
-  margin: 20px auto;
+  margin-top: 20px;
   cursor: pointer;
+  width: 60%;
+  max-width: 300px;
+  transition: transform 0.3s ease;
 }
 
 .kopi-container img {
   width: 100%;
   height: auto;
-  display: block;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
 }
 
-/* Teks "Klik kopinya yaa ☕" */
+.kopi-container:active img {
+  transform: scale(1.05);
+}
+
+/* Teks instruksi & ucapan kopi */
 #kopi-instruksi {
-  text-align: center;
-  font-size: 16px;
   font-weight: bold;
-  color: #fff;
-  background-color: #333;
-  padding: 8px 16px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-top: 30px;
+  color: #d81b60;
+  font-size: 18px;
   margin-bottom: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-/* Teks ucapan kopi */
 #kopi-text {
-  text-align: center;
-  max-width: 90%;
-  margin: 10px auto 20px auto;
+  margin-top: 20px;
   font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  background-color: #fff;
   padding: 12px 20px;
-  border-radius: 20px;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   line-height: 1.5;
 }
 
-/* Animasi Fade */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Animasi untuk teks kopi */
+#kopi-img.show {
+  animation: fadeIn 0.5s ease;
 }
 
-#kopi-text, #kopi-instruksi {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 8px;
-  border-radius: 10px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
