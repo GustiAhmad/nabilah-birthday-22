@@ -120,8 +120,69 @@
       <img id="kopi-img" src="kopi.png" alt="Kopi Kenangan" />
     </div>
     <button class="back-button" onclick="backToGreeting()">← Kembali ke Ucapan</button>
+    <button id="to-gallery-btn" style="display: none;" onclick="goToGallery()">Yuk lihat perjalanan Bila selama setahun 🌟</button>
   </div>
 
+<!-- Halaman 4: Galeri Pencapaian -->
+<div class="gallery-screen" id="gallery" style="display: none;">
+  <h1>Galeri Pencapaian Nabilah 🌟</h1>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="fotopertamakita.jpg" alt="Foto 1">
+      <p>Menjadi cewe aku &lt;3!, Juli 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="kpics.jpg" alt="Foto 2">
+      <p>Penampilan Angklung di KPI Creativity Showcase, Juli 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="healme.jpg" alt="Foto 3">
+      <p>Delegates di Local Project HealMe AIESEC in IPB, Juli 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="peduly1.jpg" alt="Foto 4">
+      <p>Volunteer Peduly di Panti Asuhan As-Saidah, September 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="peduly2.jpg" alt="Foto 5">
+      <p>Volunteer Peduly bersih-bersih sungai Cisadane, September 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="inspiratrip.jpg" alt="Foto 6">
+      <p>Divisi LO Inspiratrip Vol. 6 Jakarta, November 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="thenewyou.jpg" alt="Foto 7">
+      <p>Divisi Roadshow dan Moderator di The New You, November 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="brights.jpg" alt="Foto 8">
+      <p>Delegates di Local Project Brights 3.0 AIESEC in IPB, Desember 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="pantigoceng.jpg" alt="Foto 9">
+      <p>Media Creative Internship di Panti Goceng, Januari 2025</p>
+    </div>
+    <div class="gallery-item">
+      <img src="peduly3.jpg" alt="Foto 10">
+      <p>Volunteer Peduly Edutrip Mangrove, Februari 2025</p>
+    </div>
+    <div class="gallery-item">
+      <img src="grinia.jpg" alt="Foto 11">
+      <p>Graphic Designer Internship di Grinia.id, Maret 2025</p>
+    </div>
+    <div class="gallery-item">
+      <img src="bloomin.jpg" alt="Foto 12">
+      <p>Content Design Development Internship di Bloomin Area, April 2025</p>
+    </div>
+    <div class="gallery-item">
+      <img src="ims.jpg" alt="Foto 13">
+      <p>Juara 3 Fotografi Indonesia Marine Summit, Juni 2025</p>
+    </div>
+  </div>
+  <button onclick="goToCoffee()">⬅ Kembali ke Hadiah Kopi</button>
+</div>
+  
   <!-- Musik -->
   <audio id="musik" loop>
     <source src="happy-birthday-nabilah.mp3" type="audio/mpeg" />
@@ -188,14 +249,24 @@
       }, 200);
     }
 
-    function nextCoffee() {
-      if (currentKopi < kopiPesan.length - 1) {
-        currentKopi++;
-        showCoffee();
-      } else {
-        document.getElementById("kopi-text").innerText = "🎉 Ini hadiah kecil dariku... terima kasih sudah jadi kamu. I love you! 💗";
-      }
-    }
+function nextCoffee() {
+  if (currentKopi < kopiPesan.length - 1) {
+    currentKopi++;
+    showCoffee();
+  } else {
+    document.getElementById("kopi-text").innerText =
+      "🎉 Ini hadiah kecil dariku... terima kasih sudah jadi kamu. I love you! 💗";
+
+    // Tampilkan tombol menuju galeri setelah hadiah terakhir
+    document.getElementById("to-gallery-btn").style.display = "inline-block";
+  }
+}
+function goToGallery() {
+  document.getElementById("coffee").style.display = "none";
+  document.getElementById("gallery").style.display = "block";
+}
+
+
   </script>
 
 </body>
