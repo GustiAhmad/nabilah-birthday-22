@@ -127,3 +127,8 @@ button:hover {
   transition: all 0.3s ease;
 }
 
+#kopi-text, #kopi-instruksi {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px;
+  border-radius: 10px;
+}
