@@ -8,11 +8,30 @@
 </head>
 <body>
 
-  <!-- Halaman Pembuka -->
+  <!-- Halaman 1: Pembuka -->
   <div class="welcome-screen" id="welcome">
     <h1>Hai Bila, ada yang spesial nih buat kamu!! 🥰</h1>
     <p>Penasaran kann?</p>
-    <button onclick="startSurprise()">Apa tuchhh?</button>
+    <button onclick="goToGreeting()">Apa tuchhh?</button>
+  </div>
+
+  <!-- Halaman 2: Ucapan Awal -->
+  <div class="greeting-screen" id="greeting" style="display: none;">
+    <div class="container">
+      <h1>Selamat Ulang Tahun, Nabilah! 🎉</h1>
+      <p>Hari ini kamu genap 22 tahun! 🎂</p>
+      <p>Terima kasih sudah jadi pribadi yang kuat, sabar, dan luar biasa.</p>
+      <p>Aku bersyukur bisa ada di sisimu. 💖</p>
+      <button onclick="goToCoffee()">Lihat hadiahnya di sini 🎁</button>
+    </div>
+  </div>
+
+  <!-- Halaman 3: Hadiah Kopi Kenangan -->
+  <div class="coffee-screen" id="coffee" style="display: none;">
+    <div class="kopi-container" onclick="nextCoffee()">
+      <img id="kopi-img" src="kopi.png" alt="Kopi Kenangan" />
+      <p id="kopi-text">Klik kopinya yaa ☕</p>
+    </div>
   </div>
 
   <!-- Musik -->
@@ -20,116 +39,43 @@
     <source src="happy-birthday-nabilah.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- Konten Utama -->
-  <div class="main-content" id="main" style="display: none;">
-    <div class="container">
-      <h1>Selamat Ulang Tahun, Nabilah! 🎉</h1>
-      <p>Hari ini kamu genap 22 tahun! 🎂</p>
-      <p>Aku siapkan sesuatu yang spesial buat kamu di halaman ini 💌</p>
-    </div>
-
-    <!-- Section Kopi Kenangan -->
-   <div class="kopi-section">
-  <h2>☕ 22 Kopi Kenangan untuk Ulang Tahun Nabilah 🩷</h2>
-  <div class="kopi-grid">
-    <!-- 22 Kopi dengan ucapan -->
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 1">
-      <p>#1 – Kamu seperti kopi pertama di pagi hari, bikin semangat banget ☀️</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 2">
-      <p>#2 – Harumnya kayak kamu, bikin candu 🥹</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 3">
-      <p>#3 – Meski belum bisa beliin aslinya, semoga ini bisa buat kamu senyum 😆</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 4">
-      <p>#4 – Tahun ke-22 kamu, semoga makin kuat dan manis seperti kopi!</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 5">
-      <p>#5 – Ini kopi ke-5, tanda cinta ke-5 juta 😝</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 6">
-      <p>#6 – Kopi itu pahit, tapi kamu manis banget 😳</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 7">
-      <p>#7 – Nanti kalau udah bisa, aku traktir yang asli ya 🫶</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 8">
-      <p>#8 – Kopi ini saksi cintaku yang delapan arah 💘</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 9">
-      <p>#9 – Kamu kayak kopi, selalu bisa nenangin hati 🌿</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 10">
-      <p>#10 – Udah kopi ke-10, udah jatuh hati 100x 🥰</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 11">
-      <p>#11 – Kamu bikin aku ketagihan, kayak kopi susu gula aren 😳</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 12">
-      <p>#12 – Kamu keren banget! Kopi ke-12 buat semangat hari-hari kamu ✨</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 13">
-      <p>#13 – Ini kopi virtual dulu ya, nanti kopi nyata 🫰</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 14">
-      <p>#14 – Kopi ke-14 buat penyemangat kalau kamu lagi lelah 🤗</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 15">
-      <p>#15 – 15 kopi, 15 rasa cinta 🥹</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 16">
-      <p>#16 – Kamu pantas disayang 16 kali lipat hari ini! 💓</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 17">
-      <p>#17 – Hari ini aku cuma pengen kamu bahagia 😄</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 18">
-      <p>#18 – Kamu hebat banget, lebih dari yang kamu kira 🫶</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 19">
-      <p>#19 – Kopi ini kayak aku: selalu mikirin kamu 😝</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 20">
-      <p>#20 – Aku percaya kamu akan terus tumbuh jadi versi terbaikmu 🌱</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 21">
-      <p>#21 – Tahun ini akan jadi milikmu. Aku yakin! 💪</p>
-    </div>
-    <div class="kopi-item">
-      <img src="kopi.png" alt="Kopi Kenangan 22">
-      <p>#22 – Selamat ulang tahun, Nabilah. Aku sayang kamu 💖</p>
-    </div>
-  </div>
-</div>
-
-  <!-- Script: Pemicu Musik & Konten -->
+  <!-- Script -->
   <script>
-    function startSurprise() {
+    const kopiPesan = [
+      "☕ #1 – Kamu seperti kopi pertama di pagi hari, bikin semangat banget ☀️",
+      "☕ #2 – Harumnya kayak kamu, bikin candu 🥰",
+      "☕ #3 – Walau ini cuma gambar, niat dan sayangnya beneran 💖",
+      // lanjutkan sampai 22 pesan ya nanti...
+    ];
+    let currentKopi = 0;
+
+    function goToGreeting() {
       document.getElementById("welcome").style.display = "none";
-      document.getElementById("main").style.display = "block";
+      document.getElementById("greeting").style.display = "block";
       document.getElementById("musik").play();
+    }
+
+    function goToCoffee() {
+      document.getElementById("greeting").style.display = "none";
+      document.getElementById("coffee").style.display = "flex";
+      showCoffee();
+    }
+
+    function showCoffee() {
+      document.getElementById("kopi-img").classList.remove("show");
+      setTimeout(() => {
+        document.getElementById("kopi-text").innerText = kopiPesan[currentKopi];
+        document.getElementById("kopi-img").classList.add("show");
+      }, 200);
+    }
+
+    function nextCoffee() {
+      if (currentKopi < kopiPesan.length - 1) {
+        currentKopi++;
+        showCoffee();
+      } else {
+        document.getElementById("kopi-text").innerText = "🎉 Ini hadiah kecil dariku... terima kasih sudah jadi kamu. I love you! 💗";
+      }
     }
   </script>
 </body>
