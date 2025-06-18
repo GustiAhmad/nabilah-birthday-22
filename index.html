@@ -5,6 +5,91 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Something special for Bila!</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6f0;
+      color: #333;
+      text-align: center;
+    }
+
+    .welcome-screen,
+    .greeting-screen,
+    .coffee-screen {
+      min-height: 100vh;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .welcome-screen {
+      display: flex;
+      background-color: #ffcde0;
+    }
+
+    .container {
+      max-width: 600px;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #e91e63;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      background-color: #e91e63;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .kopi-container {
+      margin-top: 20px;
+      cursor: pointer;
+      width: 60%;
+      max-width: 300px;
+      transition: transform 0.3s ease;
+    }
+
+    .kopi-container img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .kopi-container:active img {
+      transform: scale(1.05);
+    }
+
+    #kopi-instruksi {
+      font-weight: bold;
+      color: #d81b60;
+      margin-bottom: 10px;
+    }
+
+    #kopi-text {
+      margin-top: 20px;
+      font-size: 16px;
+      max-width: 80%;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      background-color: #bbb;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
 
@@ -23,6 +108,7 @@
       <p>Terima kasih sudah jadi pribadi yang kuat, sabar, dan luar biasa.</p>
       <p>Aku bersyukur bisa ada di sisimu. 💖</p>
       <button onclick="goToCoffee()">Lihat hadiahnya di sini 🎁</button>
+      <button class="back-button" onclick="backToWelcome()">← Kembali</button>
     </div>
   </div>
 
@@ -33,6 +119,7 @@
     <div class="kopi-container" onclick="nextCoffee()">
       <img id="kopi-img" src="kopi.png" alt="Kopi Kenangan" />
     </div>
+    <button class="back-button" onclick="backToGreeting()">← Kembali ke Ucapan</button>
   </div>
 
   <!-- Musik -->
@@ -46,7 +133,25 @@
       "☕ #1 – Kamu seperti kopi pertama di pagi hari, bikin semangat banget ☀️",
       "☕ #2 – Harumnya kayak kamu, bikin candu 🥰",
       "☕ #3 – Walau ini cuma gambar, niat dan sayangnya beneran 💖",
-      // lanjutkan sampai 22 pesan ya nanti...
+      "☕ #4 – Nggak sabar bisa ngasih kamu beneran nanti 🤲",
+      "☕ #5 – Semoga tahun ini jadi awal rezeki & cita-citamu 🌈",
+      "☕ #6 – Kopi ke-6 ini spesial karena kamu juga spesial ✨",
+      "☕ #7 – Terima kasih udah bertahan sejauh ini 🐢",
+      "☕ #8 – Kamu selalu bisa bikin aku tersenyum 💫",
+      "☕ #9 – Jangan ragu buat jadi diri kamu sendiri 💌",
+      "☕ #10 – Tetap semangat dengan mimpimu ya! 🌟",
+      "☕ #11 – Kadang kamu nggak sadar sekuat apa kamu 💪",
+      "☕ #12 – Aku bangga banget sama kamu 🤍",
+      "☕ #13 – Makasih udah terus berjuang 💼",
+      "☕ #14 – Aku suka banget liat kamu ketawa 😄",
+      "☕ #15 – Nggak ada kopi yang senikmat kamu ☕💘",
+      "☕ #16 – Kamu selalu pantas dicintai 💕",
+      "☕ #17 – Kamu inspirasi buat banyak orang 🎓",
+      "☕ #18 – Hari-hari sama kamu tuh berarti 🫶",
+      "☕ #19 – Terima kasih udah ada 🧸",
+      "☕ #20 – Aku percaya masa depan kamu cerah 🌞",
+      "☕ #21 – Doa terbaik buat kamu selalu 🤍",
+      "☕ #22 – Aku sayang kamu. Selamat ulang tahun Nabilah! 🎂💖"
     ];
     let currentKopi = 0;
 
@@ -56,10 +161,23 @@
       document.getElementById("musik").play();
     }
 
+    function backToWelcome() {
+      document.getElementById("greeting").style.display = "none";
+      document.getElementById("welcome").style.display = "flex";
+      document.getElementById("musik").pause();
+      document.getElementById("musik").currentTime = 0;
+    }
+
     function goToCoffee() {
       document.getElementById("greeting").style.display = "none";
       document.getElementById("coffee").style.display = "flex";
+      currentKopi = 0;
       showCoffee();
+    }
+
+    function backToGreeting() {
+      document.getElementById("coffee").style.display = "none";
+      document.getElementById("greeting").style.display = "block";
     }
 
     function showCoffee() {
@@ -79,5 +197,6 @@
       }
     }
   </script>
+
 </body>
 </html>
