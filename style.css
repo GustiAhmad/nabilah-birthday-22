@@ -1,25 +1,28 @@
-/* Reset & Dasar */
+/* Umum */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background-color: #ffe6f0;
   color: #333;
   text-align: center;
-  padding: 50px 20px;
+  padding: 0;
 }
 
-h1 {
-  color: #e91e63;
+/* Tombol Umum */
+button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  background-color: #e91e63;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
 }
-
-/* Kontainer Utama */
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+button:hover {
+  background-color: #d81b60;
 }
 
 /* Halaman Pembuka */
@@ -31,65 +34,75 @@ h1 {
   align-items: center;
   background-color: #ffcde0;
   padding: 40px;
-  text-align: center;
 }
 
 .welcome-screen h1 {
   font-size: 24px;
   color: #d81b60;
 }
-
 .welcome-screen p {
   font-size: 18px;
-  margin-top: 10px;
   color: #444;
 }
 
-.welcome-screen button {
-  margin-top: 30px;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  background-color: #e91e63;
-  color: white;
-  border-radius: 30px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
-}
-
-.welcome-screen button:hover {
-  background-color: #ff5b9f;
-}
-
-/* Section Kopi */
-.kopi-section {
-  margin-top: 60px;
-}
-
-.kopi-section h2 {
-  color: #c2185b;
-  margin-bottom: 30px;
-}
-
-.kopi-grid {
+/* Halaman Ucapan */
+.greeting-screen {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  align-items: center;
+  background-color: #fff0f5;
+  padding: 40px;
 }
 
-.kopi-item {
-  width: 140px;
-  font-size: 12px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 12px;
-  box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.container h1 {
+  color: #e91e63;
 }
 
-.kopi-item img {
+/* Halaman Kopi */
+.coffee-screen {
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 20px;
+}
+
+.kopi-container {
+  max-width: 300px;
+  cursor: pointer;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+.kopi-container img {
   width: 100%;
-  border-radius: 10px;
-  margin-bottom: 8px;
+  max-width: 250px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+}
+.kopi-container img.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.kopi-container p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Animasi Fade */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
